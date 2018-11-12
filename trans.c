@@ -10,6 +10,17 @@ int instr_trans(char *op, char *args, char* mcode)
 
 
 	strcpy(mcode, "AB CD EF");
+	
+	char *src;
+	char *dst;
+	src = strtok(args, ",");
+	dst = strtok(NULL, ",");
+	
+	if(src[0] == "%"){
+		if(dst[0] == "%")
+			printf("89\n");
+	}
+	
 
 	/********************************/
     /*  							*/
