@@ -6,7 +6,9 @@ int is_valid(char *op, char *args)
 	//printf("otherwise, return 0\n");
 	char *src;
         char *dst;
-        src = strtok(args, ",");
+	char temp[256];
+	strcpy(temp, args);
+        src = strtok(temp, ",");
         dst = strtok(NULL, ",");
 
 	if(src[0] == '(' && src[strlen(src)-1]	== ')'){
@@ -58,7 +60,10 @@ int is_valid(char *op, char *args)
 			return 0;
 	}//case : 3 0 -3 0
 		
-		
-	
+	//=============================================================
+
+	if(dst[0] == '$')
+		return 0;		
+	//case 4
 	return 1;
 }
